@@ -7,6 +7,8 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { LayoutComponent } from './layout/layout.component';
 import { routing } from '../app.routing';
+import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
+import { TopbarComponent } from './topbar/topbar.component';
 
 @NgModule({
   imports: [
@@ -18,7 +20,9 @@ import { routing } from '../app.routing';
     HeaderComponent,
     NavMenuComponent,
     FooterComponent,
-    LayoutComponent
+    LayoutComponent,
+    BreadcrumbsComponent,
+    TopbarComponent
   ],
   exports: [
     LayoutComponent
