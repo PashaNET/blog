@@ -17,6 +17,6 @@ import { AuthentificationModule } from './authentification/authentification.modu
     AuthentificationModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
