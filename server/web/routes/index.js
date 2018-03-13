@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-// var MongoClient = require('mongodb').MongoClient;
 
 let appId = 'blog-befac';
 const stitch = require("mongodb-stitch")
@@ -24,8 +23,7 @@ function connectToDB() {
 
 router.get('/', function(req, res, next) {
   let data = connectToDB();
-  res.send(data);
+  res.send(data);//TODO: add promise
 });
-
 
 module.exports = router;
