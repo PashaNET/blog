@@ -1,23 +1,30 @@
 var express = require('express');
 var router = express.Router();
-var MongoClient = require('mongodb').MongoClient;
+// var MongoClient = require('mongodb').MongoClient;
+
+let appId = 'blog-befac';
+const stitch = require("mongodb-stitch")
+const clientPromise = stitch.StitchClientFactory.create(appId);
 
 function connectToDB() {
-  
-
-  var uri = "mongodb://PashaNET:mongo1048!@devcluster-shard-00-00-3tzqq.mongodb.net:27017,devcluster-shard-00-01-3tzqq.mongodb.net:27017,devcluster-shard-00-02-3tzqq.mongodb.net:27017/test?ssl=true&replicaSet=DevCluster-shard-0&authSource=admin";
-  MongoClient.connect(uri, function(err, client) {
-    const collection = client.db("test").collection("devices");
-    console.log(collection);
-    client.close();
+  clientPromise.then(client => {
+    const db = client.service('mongodb', 'mongodb-atlas').db('blog_db');
+    client.login().then(() =>
+      db.collection('test').updateOne({owner_id: client.authedId()}, {$set:{number:42}}, {upsert:true})
+    ).then(() =>
+      db.collection('test').find({owner_id: client.authedId()}).limit(100).execute()
+    ).then(docs => {
+      console.log("Found docs", docs)
+      console.log("[MongoDB Stitch] Connected to Stitch")
+    }).catch(err => {
+      console.error(err)
+    });
   });
 }
-/* GET home page. */
+
 router.get('/', function(req, res, next) {
-
   let data = connectToDB();
-
-  res.send('Response');
+  res.send(data);
 });
 
 
