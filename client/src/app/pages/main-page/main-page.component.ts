@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class MainPageComponent implements OnInit {
 
   constructor() { }
-
+  //push to browser history, post/:post_id
   ngOnInit() {
   }
 
