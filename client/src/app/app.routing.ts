@@ -7,7 +7,7 @@ import { DetailsPostPageComponent } from './pages/details-post-page/details-post
 const routes: Routes = [
   // { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: '', component: MainPageComponent },
-  { path: 'post/:id', component: DetailsPostPageComponent}
+  { path: 'post/:id', component: DetailsPostPageComponent }//user angular history
 ];
 // { path: '**', component: PageNotFoundComponent }
 //loadChildren - lazy load
