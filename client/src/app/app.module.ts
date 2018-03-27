@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { LayoutModule } from './layout/layout.module';
 import { PagesModule } from './pages/pages.module';
 import { AppComponent } from './app.component';
@@ -20,3 +19,4 @@ import { AuthentificationModule } from './authentification/authentification.modu
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
+/* write schema how modules collaborate */

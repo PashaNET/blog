@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { MainPageComponent } from './main-page/main-page.component';
 import { DetailsPostPageComponent } from './details-post-page/details-post-page.component';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   declarations: [ MainPageComponent, DetailsPostPageComponent ],
   exports: [ MainPageComponent ]
