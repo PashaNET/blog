@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-post-info',
@@ -6,7 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./post-info.component.styl']
 })
 export class PostInfoComponent implements OnInit {
-
+  @Input() name: String;
+  @Input() date: String;
+  @Input() category: String;
+  @Input() commentsQuantity: Number;
+  
   constructor() { }
 
   ngOnInit() {
