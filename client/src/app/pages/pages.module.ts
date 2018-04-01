@@ -3,13 +3,20 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MainPageComponent } from './main-page/main-page.component';
 import { DetailsPostPageComponent } from './details-post-page/details-post-page.component';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    ComponentsModule
   ],
-  declarations: [ MainPageComponent, DetailsPostPageComponent ],
-  exports: [ MainPageComponent ]
+  declarations: [ 
+    MainPageComponent, 
+    DetailsPostPageComponent 
+  ],
+  exports: [ 
+    MainPageComponent 
+  ]
 })
 export class PagesModule { }

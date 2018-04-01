@@ -4,12 +4,10 @@ import { LayoutModule } from './layout/layout.module';
 import { PagesModule } from './pages/pages.module';
 import { AppComponent } from './app.component';
 import { AuthentificationModule } from './authentification/authentification.module';
-import { CommentComponent } from './components/comment/comment.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    CommentComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
